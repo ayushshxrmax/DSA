@@ -1,3 +1,4 @@
+// type 2 
 class Solution {
     public int mySqrt(int x) {
         if(x == 0)
@@ -10,19 +11,18 @@ class Solution {
         int ans = -1;
         int low = 1;
         int high = x;
-        while(low <= high) {
+        while(low < high) {
             int mid = low + (high -  low) / 2;
 
             long val = (long) mid * mid ;
 
             if(val > x) {
-                high = mid - 1;
+                high = mid ;
             } else{
-                ans = mid;
                 low = mid + 1;
             }
         }
-        return ans ;
+        return low - 1;
 
     }
 }
